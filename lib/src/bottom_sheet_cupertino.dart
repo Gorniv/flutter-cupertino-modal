@@ -245,8 +245,9 @@ class _CupertinoBottomSheetState extends State<CupertinoBottomSheet> {
       });
     } else {
       widget.animationController
-          .forward()
-          .then((value) => _extent._currentExtent.value = 1);
+          .forward();
+          // fix for Navigator.pop(context);
+          //.then((value) => _extent._currentExtent.value = 1);
     }
   }
 
