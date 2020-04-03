@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_modal_navigation/cupertino_modal_navigation.dart';
 
 class SimpleModal extends StatelessWidget {
   final ScrollController scrollController;
@@ -11,7 +10,15 @@ class SimpleModal extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-          leading: Container(), middle: Text('Modal Page')),
+        leading: Container(),
+        trailing: IconButton(
+          icon: Icon(Icons.close),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        middle: Text('Modal Page'),
+      ),
       child: Center(),
     );
   }
